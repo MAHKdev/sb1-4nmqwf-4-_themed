@@ -1,0 +1,17 @@
+User-Agent: Googlebot
+Disallow: *
+
+User-Agent: Applebot
+Disallow: *
+
+User-Agent: Bingbot
+Disallow: *
+
+User-agent: AhrefsBot
+Allow: *
+
+# Host
+Host: https://dev.kido.do
+
+# Sitemaps
+Sitemap: https://dev.kido.do/sitemap.xml

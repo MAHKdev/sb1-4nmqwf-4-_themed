@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* It makes the HTML smooth scrolling */
+html,
+body,
+* {
+  scroll-behavior: smooth !important;
+  scrollbar-width: none !important;
+  scrollbar-color: var(--primary) var(--background);
+  /* overflow-x: hidden; */
+}
+
+
+
+* {
+  color: var(--primary);
+  cursor: url('/i/cursor.svg'), auto !important;
+}
+
+
+
+/* It makes the HTML progress bar filling smooth when value change. */
+progress::-webkit-progress-value {
+  transition: 0.6s width ease-out;
+}
+
+/*
+@layer base {
+  .btn-gradient {
+    @apply !bg-gradient !bg-[length:300%_300%] hover:saturate-[1.2] shadow duration-100 !border-0 !border-transparent !bg-transparent animate-shimmer disabled:!bg-none disabled:!bg-gray-500/30  !text-white;
+  }
+  .btn {
+    @apply !capitalize;
+  }
+}
+  */
+
+.flipM {
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+.flip-text {
+  display: inline-block;
+  /* Ensures transform is applied properly */
+  transform: scaleX(-1);
+  /* Flips the text horizontally */
+  text-align: center;
+  /* Ensures text alignment remains proper after flipping */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.card-title {
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+.card {
+  @apply shadow-xl;
+}
+
+.card-body {
+  @apply p-6;
+}
+
+/*
+.card-title {
+  @apply text-primary;
+}
+  */
+
+
+.dashboard .card-body {
+  @apply p-4;
+}
+
+.animhover {
+  /*
+  @apply border border-transparent hover:border hover:border-primary
+  */
+  @apply hover:skew-x-3
+}
+
+
+.animhover:hover {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  /*transform: scale(1.02);*/
+  /*filter: hue-rotate(10deg);
+  transform*/
+  transform-origin: center center;
+  /*border-radius: 20px;*/
+  cursor: default;
+
+}
+
+/*
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+    */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+.tvwidget #widget-container,
+.tvwidget *,
+#widget-container {
+  border: none !important;
+}
+
+
+/* app/dashboard/components/TradingViewWidget.module.css */
+.widgetContainer {
+  border: 1px solid #ddd;
+  /* Example: Adds a border around the widget */
+  border-radius: 8px;
+  /* Example: Rounds the corners */
+  overflow: hidden;
+  /* Ensures content doesn't overflow the container */
+  width: 100%;
+  height: 200px;
+  /* Adjust height as needed */
+}
+
+.widgetContainer #tradingview_widget {
+  background-color: #f0f0f0;
+  /* Example: Set a custom background color */
+}
+
+/* Hide specific parts of the widget */
+#tradingview_widget .tv-floating-toolbar,
+/* Hide floating toolbar */
+#tradingview_widget .tv-header,
+/* Hide header */
+#tradingview_widget .tv-side-toolbar {
+  /* Hide side toolbar */
+  display: none !important;
+}
+
+
+
+table.pricing thead th,
+table.pricing thead th {
+  position: sticky;
+  top: 70px;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 20px;
+  @apply bg-base-200;
+  margin: 1rem;
+  border: 5px solid transparent;
+  z-index: 9999991;
+}
+
+table.pricing tr.select-cta {
+  position: sticky;
+  bottom: 0;
+  z-index: 9999990;
+}
+
+table.pricing td {
+  padding: 1rem;
+  text-align: center;
+  overflow: hidden;
+  border-right: 1px solid #3b3b3b;
+}
+
+table.pricing td:last-child {
+  border-right: none;
+}
+
+table.pricing tr {
+  border-bottom: 1px solid #3b3b3b;
+}
+
+table.pricing tr:last-child {
+  border-bottom: none;
+}
+
+
+
+table.pricing tr.subtitle {
+  @apply text-sm;
+  border-radius: 20px;
+  overflow: hidden;
+  border-bottom: none;
+  text-align: left;
+}
+
+table.pricing tr.subtitle td {
+  padding-bottom: 0rem;
+  border-bottom: none;
+  padding-left: .5rem;
+  text-align: left;
+}
+
+
+
+/* Add new animation for theme switch */
+@keyframes spin-once {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.animate-spin-once {
+  animation: spin-once 0.6s ease-out forwards;
+}
+
+/* Toast animations */
+.toast {
+  @apply pointer-events-none;
+}
+
+.toast>* {
+  @apply pointer-events-auto;
+}
+
+/* Theme transition */
+* {
+  @apply transition-colors duration-200;
+}

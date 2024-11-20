@@ -1,0 +1,53 @@
+h1
+{
+  @apply text-3xl font-bold mb-4;
+  @apply text-primary;
+}
+
+
+h2
+{
+  @apply text-2xl font-bold mb-4;
+  @apply text-primary;
+}
+
+
+h3
+{
+  @apply text-xl font-bold mb-4;
+  @apply text-primary;
+}
+
+h4
+{
+  @apply font-bold mb-4;
+  @apply text-primary;
+}
+
+h5
+{
+  @apply font-bold mb-4;
+  @apply text-primary;
+}
+
+
+h6
+{
+  @apply font-bold mb-4;
+  @apply text-primary;
+}
+
+p 
+{
+  @apply mb-4;
+}
+
+hr
+{
+  @apply my-8;
+}
+
+img
+{
+  @apply rounded-2xl;
+}
